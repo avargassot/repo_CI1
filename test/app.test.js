@@ -10,13 +10,13 @@ describe('API Tests', () => {
     });
 
     it('POST /home - Agregar elementos', async()=> {
-        const res = (await request(app).post('/home')).send('nuevo item');
+        const res = await request(app).post('/home').send('nuevo item');
         expect(res.status).toBe(201);
         expect(res.body).toHaveProperty('message', 'Item added');
     });
 
     it('POST /home - Error si no envía un item', async()=> {
-        const res = (await request(app).post('/home')).send({});
+        const res = await request(app).post('/home').send({});
         expect(res.status).toBe(400);
         expect(res.body).toHaveProperty('error', 'Item is required');
     });
