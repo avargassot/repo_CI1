@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        NODE_VERSION = '18' // Cambia si usas otra versión de Node.js
+        NODE_VERSION = '20' // Cambia si usas otra versión de Node.js
     }
     stages {
         stage('Checkout') {
