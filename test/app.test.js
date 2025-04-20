@@ -10,7 +10,7 @@ describe('API Tests', () => {
     });
 
     it('POST /home - Agregar elementos', async()=> {
-        const res = await request(app).post('/home').send({"item": 'Nuevo Item'});
+        const res = await request(app).post('/home').send({item: 'Nuevo Item'});
         expect(res.status).toBe(201);
         expect(res.body).toHaveProperty('message', 'Item added');
     });
